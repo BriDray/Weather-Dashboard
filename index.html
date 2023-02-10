@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+
+<body>
+    <header class="header">
+        Weather Dashboard
+    </header>
+    <div class="row align-items-start ">
+        <!-- the column in which holds the weather API -->
+        <div class="weather">
+            <!-- card that holds the api within the sidebar -->
+            <div class="card weatherCard">
+                <div class="card-body">
+                    <h1 class="card-title">Search Weather</h1>
+                    <input class="weatherInput" type="text" placeholder="Enter zip code here.."></input>
+                    <button type="button" class="btn btn-outline-secondary seeWeather" id="fetch-button"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; width: 10rem; height: 2rem;">
+                        See Weather Results
+                    </button>
+                </div>
+            </div>
+            <style>
+                .weather {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                }
+            </style>
+        </div>
+        <!--------- Current Weather Div --------->
+        <div>
+            <h3>Current Weather</h3>
+            <!-- Temperature -->
+            <h2>Current Temperature</h2>
+            <p class="weatherResults" id="temp"></p>
+            <h2>Max-Temperature:</h2>
+            <p class="weatherResults" id="maxtemp"></p>
+            <h2>Min-Temperature:</h2>
+            <p class="weatherResults" id="mintemp"></p>
+            <h2>Humidity</h2>
+            <p class="weatherResults" id="humidity"></p>
+            <h2>Wind</h2>
+            <h2>Speed:</h2>
+            <p class="weatherResults" id="windspeed"></p>
+        </div>
+        <!-------- 5 day Forecast boxes --------->
+        <div>
+            <h4> 5 day Forecast</h4>
+            <div class="day">
+                <h5>Max-Temperature:</h5>
+                <h5>Min-Temperature:</h5>
+                <h5>Humidity:</h5>
+                <h5>Wind Speed:</h5>
+            </div>
+            <div class="day">
+                <h5>Max-Temperature:</h5>
+                <h5>Min-Temperature:</h5>
+                <h5>Humidity:</h5>
+                <h5>Wind Speed:</h5>
+            </div>
+            <div class="day">
+                <h5>Max-Temperature:</h5>
+                <h5>Min-Temperature:</h5>
+                <h5>Humidity:</h5>
+                <h5>Wind Speed:</h5>
+            </div>
+            <div class="day">
+                <h5>Max-Temperature:</h5>
+                <h5>Min-Temperature:</h5>
+                <h5>Humidity:</h5>
+                <h5>Wind Speed:</h5>
+            </div>
+            <div class="day">
+                <h5>Max-Temperature:</h5>
+                <h5>Min-Temperature:</h5>
+                <h5>Humidity:</h5>
+                <h5>Wind Speed:</h5>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+</body>
+
+</html>
