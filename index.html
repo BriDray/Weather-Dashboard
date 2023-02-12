@@ -36,7 +36,7 @@
             </style>
         </div>
         <!--------- Current Weather Div --------->
-        <div>
+        <div class="current">
             <h3>Current Weather</h3>
             <!-- Temperature -->
             <h2>Current Temperature</h2>
@@ -83,6 +83,13 @@
                 <h5>Min-Temperature:</h5>
                 <h5>Humidity:</h5>
                 <h5>Wind Speed:</h5>
+                <style>
+                    .day {
+                        display: inline-flex;
+                        flex-wrap: wrap;
+                        flex-direction: row;
+                    }
+                </style>
             </div>
         </div>
         <script src="./script.js"></script>
