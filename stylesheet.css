@@ -11,24 +11,24 @@
     margin-bottom: 10px;
 }
 
-/* Weather sidebar */
+/* Weather  */
 .weather {
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: left;
-    width: 295px;
+    width: 100%;
     margin-left: 5px;
 }
 
 .weatherCard {
-    width: 288px;
-    height: 325px;
-    border: 2px solid darkgrey;
-    box-shadow: 3px 2px 2px lightgrey;
+    width: 100%;
+    height: 218px;
+    /* border: 2px solid darkgrey;
+    box-shadow: 3px 2px 2px lightgrey; */
 }
 
-/* content within the weather sidebar */
+/* content within the weather  */
 .card-body {
     text-align: center;
 
@@ -41,37 +41,70 @@ h1 {
     /* text-shadow: 1px 1px 1px #262675; */
 }
 
-/* textbox for zip code */
+/* textbox for city */
 .weatherInput {
+    font-size: 18px;
     margin: 3px 3px 3px 3px;
+}
+
+.cityName {
+    font-size: 18px;
 }
 
 /* current weather styling */
 /* current weather div */
 .current {
     border: 2px solid darkgrey;
-    height: 325px;
+    height: auto;
     width: 75%;
+    margin: auto;
+ 
 }
 
 /*Section Title */
-h3 {
+h3, h4 {
     font-size: 30px;
     font-weight: bold;
+    text-align: center;
 }
 
 /* sub titles */
 h2 {
-    font-size: 20px;
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.currentdate, .date {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 16px;
+    color:#262675;
+}
+
+h5, .result {
+    text-align: center;
 }
 
 
 /* 5 day forecast styling */
-.day {
-    border: 2px solid darkgrey;
-    width:100px;
-    height: 150px;
+.fiveday {
+    width:auto;
+    height:auto;
     display: flex;
     flex: row wrap;
     flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.day {
+    border: 2px solid darkgrey;
+    width: 100%;
+    padding-left: 5px;
+    text-align: center;
+    /* flex: row wrap; */
+    /* flex-direction: row; */
+}
+
+h5 {
+    display:block;
 }
