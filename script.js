@@ -35,7 +35,6 @@ function getApi() {
     .then(function (data) {
       console.log('currentDay', data)
       // current Day
-      // console.log($('#currentdate').text(data.main.))
       console.log($('#temp').text(data.main.temp + 'F'))
       console.log($('#weatherDescription').text(data.weather[0].description))
       console.log($('#maxtemp').text(data.main.temp_max + 'F'))
@@ -92,42 +91,35 @@ function getApi() {
 
     });
   var seeWeatherBtn = document.getElementById("seeWeather");
-  if (localStorage.getItem('citySearch')) {
-    // add for loop for Saved Search to load upon page load (from local)
-    for (var i = 0; i < cityNames.length; i++) {
-      var savedSearch = document.createElement("div");
-      savedSearch.classList.add("newCity");
-      savedSearch.textContent = cityNames[i];
-    }
-  } else {
-
-    cityNames.push(cityName)
-    localStorage.setItem('citySearch', JSON.stringify(cityNames));
-
-  }
-
+  cityNames.push(cityName)
+  localStorage.setItem('citySearch', JSON.stringify(cityNames));
+  renderSearch()
 
 };
 // event listener for clicking the fetchButton to respond to click to get API
 fetchButton.addEventListener('click', getApi);
 
+
+
+function renderSearch (){
+  recentSearch.innerHTML = ""
 // recent searches list
 if (localStorage.getItem('citySearch')) {
   console.log(cityNames)
     cityNames = JSON.parse(localStorage.getItem('citySearch'));
-    // cityNames.push(cityName)
     localStorage.setItem('citySearch', JSON.stringify(cityNames));
 
-  for (var i = 0; i < cityNames.length; i++) {
+  for (var i = cityNames.length < 5 ? 0 : cityNames.length - 5; i < cityNames.length; i++) {
     var prevSearch = document.createElement('p');
     prevSearch.innerHTML = cityNames[i];
     prevSearch.addEventListener("click", function(event){
       var cityInput = document.getElementById('cityName')
-      cityInput.value = cityNames[i];
+      cityInput.value = event.target.textContent;
       
 
     })
     recentSearch.append(prevSearch)
   }
-} 
+}} 
 
+renderSearch()

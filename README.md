@@ -19,4 +19,4 @@ MIT License
 ## Features
 
 *OpenWeather API
-Both a current day weather conditions and a 5 day forecast.
+(Both a current day weather conditions and a 5 day forecast.)

@@ -20,6 +20,18 @@ h6 {
     margin: auto;
 }
 
+.recentSearch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color:white;
+    text-shadow: 2px 2px 2px black;
+    font-size: 18px;
+    
+
+
+}
+
 /* Weather  */
 .weather {
     display:flex;
