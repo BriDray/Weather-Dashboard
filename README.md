@@ -9,10 +9,8 @@ The Weasther Dashboard was created to make life a little easier. Want to know wh
 
 Using the Weather-Dashboard is very simple. All you have to do is enter your city search in the input bard and click the see Weather Button. The current weather will then be list in Today's Weather section. and if you scroll down, you'll also see a 5 day forecast for your search as well!
 
-```md
-![Weather Dashboard](assets\ScreenshotWD.png)
-```
 
+![Weather Dashboard](assets\ScreenshotWD.png)
 
 ## License
 
