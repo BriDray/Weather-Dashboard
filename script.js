@@ -1,4 +1,7 @@
 var fetchButton = document.getElementById('fetch-button');
+var cityNames = []
+var recentSearch = document.getElementById('recentSearch')
+var localStorage = window.localStorage;
 
 // uses jquery to submit form when enter key is used.
 $(document).ready(() => {
@@ -26,22 +29,22 @@ function getApi() {
   let requestCurrentcityUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial&appid=35fcbf0150ea112152a8c8cacc79acc7';
   // Current day Fetch request
   fetch(requestCurrentcityUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data){
-    console.log('currentDay', data)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log('currentDay', data)
       // current Day
-        // console.log($('#currentdate').text(data.main.))
-        console.log($('#temp').text(data.main.temp + 'F'))
-        console.log($('#weatherDescription').text(data.weather[0].description))
-        console.log($('#maxtemp').text(data.main.temp_max + 'F'))
-        console.log($('#mintemp').text(data.main.temp_min + 'F'))
-        console.log($('#humidity').text(data.main.humidity + '%'))
-        console.log($('#windspeed').text(data.wind.speed + 'mph'))
+      // console.log($('#currentdate').text(data.main.))
+      console.log($('#temp').text(data.main.temp + 'F'))
+      console.log($('#weatherDescription').text(data.weather[0].description))
+      console.log($('#maxtemp').text(data.main.temp_max + 'F'))
+      console.log($('#mintemp').text(data.main.temp_min + 'F'))
+      console.log($('#humidity').text(data.main.humidity + '%'))
+      console.log($('#windspeed').text(data.wind.speed + 'mph'))
 
-  })
-// 5 day forecast fetch request
+    })
+  // 5 day forecast fetch request
   fetch(requestcityUrl)
     .then(function (response) {
       return response.json();
@@ -86,31 +89,45 @@ function getApi() {
         console.log($('#windSpeed5').text(data.list[34].wind.speed + 'mph'))
       }
       console.log(data)
-  
+
     });
-    var localStorage = window.localStorage;
-var seeWeatherBtn = document.getElementById("seeWeather");
-var cityNames = []
-if (localStorage.getItem('citySearch')) {
-  console.log(cityNames)
-  cityNames = JSON.parse(localStorage.getItem('citySearch'));
-  cityNames.push(cityName)
-  localStorage.setItem('citySearch', JSON.stringify(cityNames));
-  // add for loop for Saved Search to load upon page load (from local)
-  for (var i = 0; i < cityNames.length; i++) {
-    var savedSearch = document.createElement("div");
-    savedSearch.classList.add("newCity");
-    savedSearch.textContent = cityNames[i];
+  var seeWeatherBtn = document.getElementById("seeWeather");
+  if (localStorage.getItem('citySearch')) {
+    // add for loop for Saved Search to load upon page load (from local)
+    for (var i = 0; i < cityNames.length; i++) {
+      var savedSearch = document.createElement("div");
+      savedSearch.classList.add("newCity");
+      savedSearch.textContent = cityNames[i];
+    }
+  } else {
+
+    cityNames.push(cityName)
+    localStorage.setItem('citySearch', JSON.stringify(cityNames));
 
   }
-} else {
- 
-  cityNames.push(cityName)
-  localStorage.setItem('citySearch', JSON.stringify(cityNames));
-  
-}
 
 
 };
 // event listener for clicking the fetchButton to respond to click to get API
 fetchButton.addEventListener('click', getApi);
+
+// recent searches list
+if (localStorage.getItem('citySearch')) {
+  console.log(cityNames)
+    cityNames = JSON.parse(localStorage.getItem('citySearch'));
+    // cityNames.push(cityName)
+    localStorage.setItem('citySearch', JSON.stringify(cityNames));
+
+  for (var i = 0; i < cityNames.length; i++) {
+    var prevSearch = document.createElement('p');
+    prevSearch.innerHTML = cityNames[i];
+    prevSearch.addEventListener("click", function(event){
+      var cityInput = document.getElementById('cityName')
+      cityInput.value = cityNames[i];
+      
+
+    })
+    recentSearch.append(prevSearch)
+  }
+} 
+
