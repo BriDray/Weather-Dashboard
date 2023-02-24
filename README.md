@@ -1,5 +1,7 @@
 # Weather Dashboard
 
+![License](https://img.shields.io/static/v1?label=License&message=MIT&color=GREEN)
+
 ## Description 
 
 The Weasther Dashboard was created to make life a little easier. Want to know what the weather your upcoming week will be, to help you better prepare. Look no further! with a really simple layout thats easy to follow, you can view "Today's Weather" for current weather conditions. As well as scroll down to view a 5 Day forecast to help you better prepare for your week! 
@@ -11,6 +13,8 @@ Using the Weather-Dashboard is very simple. All you have to do is enter your cit
 
 ![Weather Dashboard Screenshot](assets/ScreenshotWD.png?raw=true "Weather Dashboard")
 
+## Github Link
+[View Weather Dashboard Here!](https://bridray.github.io/Weather-Dashboard/)
 
 ## License
 
