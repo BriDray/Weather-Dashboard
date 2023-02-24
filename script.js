@@ -64,6 +64,7 @@ function getApi() {
         console.log(data.list[i].main.temp + 'F')
         // Day 1
         console.log($('#date1').text(data.list[2].dt_txt.split(' ')[0]))
+        forecastD1.src = `https://openweathermap.org/img/wn/${data.list[2].weather[0].icon}@2x.png`;
         console.log($('#weatherDesc1').text(data.list[2].weather[0].description))
         console.log($('#maxTemp1').text(data.list[2].main.temp_max + 'F'))
         console.log($('#minTemp1').text(data.list[2].main.temp_min + 'F'))
@@ -71,6 +72,7 @@ function getApi() {
         console.log($('#windSpeed1').text(data.list[2].wind.speed + 'mph'))
         // Day 2
         console.log($('#date2').text(data.list[10].dt_txt.split(' ')[0]))
+        forecastD2.src = `https://openweathermap.org/img/wn/${data.list[10].weather[0].icon}@2x.png`;
         console.log($('#weatherDesc2').text(data.list[10].weather[0].description))
         console.log($('#maxTemp2').text(data.list[10].main.temp_max + 'F'))
         console.log($('#minTemp2').text(data.list[10].main.temp_min + 'F'))
@@ -78,6 +80,7 @@ function getApi() {
         console.log($('#windSpeed2').text(data.list[10].wind.speed + 'mph'))
         // Day 3
         console.log($('#date3').text(data.list[18].dt_txt.split(' ')[0]))
+        forecastD3.src = `https://openweathermap.org/img/wn/${data.list[18].weather[0].icon}@2x.png`;
         console.log($('#weatherDesc3').text(data.list[18].weather[0].description))
         console.log($('#maxTemp3').text(data.list[18].main.temp_max + 'F'))
         console.log($('#minTemp3').text(data.list[18].main.temp_min + 'F'))
@@ -85,6 +88,7 @@ function getApi() {
         console.log($('#windSpeed3').text(data.list[18].wind.speed + 'mph'))
         // Day 4
         console.log($('#date4').text(data.list[26].dt_txt.split(' ')[0]))
+        forecastD4.src = `https://openweathermap.org/img/wn/${data.list[26].weather[0].icon}@2x.png`;
         console.log($('#weatherDesc4').text(data.list[26].weather[0].description))
         console.log($('#maxTemp4').text(data.list[26].main.temp_max + 'F'))
         console.log($('#minTemp4').text(data.list[26].main.temp_min + 'F'))
@@ -92,6 +96,7 @@ function getApi() {
         console.log($('#windSpeed4').text(data.list[26].wind.speed + 'mph'))
         // Day 5
         console.log($('#date5').text(data.list[34].dt_txt.split(' ')[0]))
+        forecastD5.src = `https://openweathermap.org/img/wn/${data.list[34].weather[0].icon}@2x.png`;
         console.log($('#weatherDesc5').text(data.list[34].weather[0].description))
         console.log($('#maxTemp5').text(data.list[34].main.temp_max + 'F'))
         console.log($('#minTemp5').text(data.list[34].main.temp_min + 'F'))
