@@ -1,5 +1,5 @@
 body {
-    background-image: url("/assets/Images/sky.png");
+    background-image: url("/assets/sky.png");
 }
 .header {
     display: flex;
