@@ -105,7 +105,7 @@ function getApi() {
       }
       console.log(data)
 
-    });
+     });
   var seeWeatherBtn = document.getElementById("seeWeather");
   cityNames.push(cityName)
   localStorage.setItem('citySearch', JSON.stringify(cityNames));
@@ -131,7 +131,7 @@ if (localStorage.getItem('citySearch')) {
     prevSearch.addEventListener("click", function(event){
       var cityInput = document.getElementById('cityName')
       cityInput.value = event.target.textContent;
-      
+      getApi()
 
     })
     recentSearch.append(prevSearch)
