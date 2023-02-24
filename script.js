@@ -3,11 +3,12 @@ var cityNames = []
 var recentSearch = document.getElementById('recentSearch')
 var localStorage = window.localStorage;
 const currentWeatherImg = document.querySelector("#currentDayImg");
-const forecastD1 = document.querySelector("#day1");
-const forecastD2 = document.querySelector("#day2");
-const forecastD3 = document.querySelector("#day3");
-const forecastD4 = document.querySelector("#day4");
-const forecastD5 = document.querySelector("#day5");
+const forecastD1 = document.querySelector(".day1");
+const forecastD2 = document.querySelector(".day2");
+const forecastD3 = document.querySelector(".day3");
+const forecastD4 = document.querySelector(".day4");
+const forecastD5 = document.querySelector(".day5");
+var cityNameEL = document.querySelector('.insertCityName')
 
 
 // uses jquery to submit form when enter key is used.
@@ -42,6 +43,9 @@ function getApi() {
     .then(function (data) {
       console.log('currentDay', data)
       // current Day
+      // console.log($(currentWeatherImg)(data.weather[0].icon))
+      currentWeatherImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      cityNameEL.innerHTML = `${data.name}, ${data.sys.country}`
       console.log($('#temp').text(data.main.temp + 'F'))
       console.log($('#weatherDescription').text(data.weather[0].description))
       console.log($('#maxtemp').text(data.main.temp_max + 'F'))
