@@ -2,6 +2,13 @@ var fetchButton = document.getElementById('fetch-button');
 var cityNames = []
 var recentSearch = document.getElementById('recentSearch')
 var localStorage = window.localStorage;
+const currentWeatherImg = document.querySelector("#currentDayImg");
+const forecastD1 = document.querySelector("#day1");
+const forecastD2 = document.querySelector("#day2");
+const forecastD3 = document.querySelector("#day3");
+const forecastD4 = document.querySelector("#day4");
+const forecastD5 = document.querySelector("#day5");
+
 
 // uses jquery to submit form when enter key is used.
 $(document).ready(() => {
